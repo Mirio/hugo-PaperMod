@@ -90,10 +90,10 @@
 {{- end -}}
 
 {{- /* LightBox */}}
-{{- if (eq .Layout `posts`) -}}
+{{- if (eq .Kind `page`) -}}
 {{- $boxjs := resources.Get "js/venobox.min.js" }}
 {{- $boxcss := resources.Get "css/venobox/venobox.min.css" }}
-<script defer crossorigin="anonymous" src="{{ $boxjs.RelPermalink }}"></script>
+<script defer crossorigin="anonymous" src="{{ $boxjs.RelPermalink }}">new VenoBox({selector: '.venobox'});</script>
 <link type="text/css" rel="stylesheet" href="{{ $boxcss.RelPermalink }}" />
 {{- end -}}
 

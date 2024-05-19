@@ -4,7 +4,7 @@
            {{- with .Get "class" }}{{ . }}{{- end }}"
 {{- end -}}>
     {{- if .Get "link" -}}
-        <a href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
+        <a class="venobox" href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
     {{- end }}
     {{ $original := .Page.Resources.GetMatch (printf "%s*" (.Get "src") ) }}
     {{ .Scratch.Set "image" ($original.Resize "600x webp text q75") }}
