@@ -91,10 +91,10 @@
 
 {{- /* LightBox */}}
 {{- if (eq .Layout `posts`) -}}
-{{- $lightgalleryjs := resources.Get "js/lightgallery.min.js" }}
-{{- $lightgallerycss := resources.Get "css/lightgallery/lightgallery-bundle.min.css" }}
-<script defer crossorigin="anonymous" src="{{ $lightgalleryjs.RelPermalink }}"></script>
-<link type="text/css" rel="stylesheet" href="{{ $lightgallerycss.RelPermalink }}" />
+{{- $boxjs := resources.Get "js/venobox.min.js" }}
+{{- $boxcss := resources.Get "css/venobox/venobox.min.css" }}
+<script defer crossorigin="anonymous" src="{{ $boxjs.RelPermalink }}"></script>
+<link type="text/css" rel="stylesheet" href="{{ $boxcss.RelPermalink }}" />
 {{- end -}}
 
 {{- /* Highlight.js */}}
