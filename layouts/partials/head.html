@@ -89,6 +89,14 @@
 {{- end }}
 {{- end -}}
 
+{{- /* LightBox */}}
+{{- if (eq .Layout `single`) -}}
+{{- $lightgalleryjs := resources.Get "js/lightgallery.min.js" }}
+{{- $lightgallerycss := resources.Get "css/lightgallery/lightgallery-bundle.min.css" }}
+<script defer crossorigin="anonymous" src="{{ $lightgalleryjs.RelPermalink }}"></script>
+<link type="text/css" rel="stylesheet" href="{{ $lightgallerycss.RelPermalink }}" />
+{{- end -}}
+
 {{- /* Highlight.js */}}
 {{- $isHLJSdisabled := (site.Params.assets.disableHLJS | default .Params.disableHLJS ) }}
 {{- if (and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") (not $isHLJSdisabled)) }}
