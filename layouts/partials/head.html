@@ -90,7 +90,7 @@
 {{- end -}}
 
 {{- /* LightBox */}}
-{{- if (eq .Layout `single`) -}}
+{{- if (eq .Layout `posts`) -}}
 {{- $lightgalleryjs := resources.Get "js/lightgallery.min.js" }}
 {{- $lightgallerycss := resources.Get "css/lightgallery/lightgallery-bundle.min.css" }}
 <script defer crossorigin="anonymous" src="{{ $lightgalleryjs.RelPermalink }}"></script>
