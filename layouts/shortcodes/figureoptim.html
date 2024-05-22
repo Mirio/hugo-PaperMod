@@ -4,10 +4,10 @@
            {{- with .Get "class" }}{{ . }}{{- end }}"
 {{- end -}}>
     {{- if .Get "link" -}}
-        <a class="venobox" href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
+        <a class="venobox" href="{{ .Get "link" }}"{{ with .Get "target" }} target="_blank"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
     {{- end }}
     {{ $original := .Page.Resources.GetMatch (printf "%s*" (.Get "src") ) }}
-    {{ .Scratch.Set "image" ($original.Resize "600x webp text q75") }}
+    {{ .Scratch.Set "image" ($original.Resize "500x webp text q60") }}
     {{ $image := .Scratch.Get "image" }}
     <img loading="lazy" src="{{ $image.RelPermalink }}{{- if eq (.Get "align") "center" }}#center{{- end }}"
          {{- if or (.Get "alt") (.Get "caption") }}

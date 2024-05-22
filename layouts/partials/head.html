@@ -93,8 +93,9 @@
 {{- if (eq .Kind `page`) -}}
 {{- $boxjs := resources.Get "js/venobox.min.js" }}
 {{- $boxcss := resources.Get "css/venobox/venobox.min.css" }}
-<script defer crossorigin="anonymous" src="{{ $boxjs.RelPermalink }}">new VenoBox({selector: '.venobox'});</script>
-<link type="text/css" rel="stylesheet" href="{{ $boxcss.RelPermalink }}" />
+<script defer crossorigin="anonymous" src="{{ $boxjs.RelPermalink }}"></script>
+<link rel="preload" href="{{ $boxcss.RelPermalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ $boxcss.RelPermalink }}"></noscript>
 {{- end -}}
 
 {{- /* Highlight.js */}}
